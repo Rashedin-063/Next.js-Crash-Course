@@ -20,15 +20,24 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="mx-4 bg-blue-950 ">
+    <html lang='en' className='max-w-7xl mx-auto px-4 bg-blue-950 '>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className='py-4 bg-blue-950 opacity-45 text-white font-semibold flex gap-6 justify-center'>
-          <Link href='/'>Home</Link>
-          <Link href='/about'>About</Link>
-       </nav>
-        {children}
+        <nav className='py-4 bg-blue-950 opacity-45 text-yellow-200 font-semibold flex gap-6 justify-center h-16'>
+          <ul className='flex gap-4'>
+            <li>
+              <Link href='/'>Home</Link>
+            </li>
+            |
+            <li>
+              <Link href='/about'>About</Link>
+            </li>
+          </ul>{' '}
+        </nav>
+
+        <div className='h-[90vh] bg-blue-950 '>{children}</div>
+        <footer className='h-20'></footer>
       </body>
     </html>
   );

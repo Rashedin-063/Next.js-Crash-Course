@@ -1,6 +1,5 @@
-const About = () => {
+export default function AboutPage () {
   return (
-    <div>page</div>
+    <div className='text-center pt-20'>This is About page</div>
   )
 }
-export default About
