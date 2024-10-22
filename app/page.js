@@ -1,5 +1,3 @@
-
-
 export default function Home() {
   return (
    <div className="min-h-[90vh] flex justify-center items-center bg-blue-950 px-8 h-[80vh]">
