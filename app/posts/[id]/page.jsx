@@ -7,7 +7,7 @@ export async function generateMetadata({params}) {
   return {
     title: post.title,
     description: post.body
-  }
+ }
 }
 
 async function SinglePostPage({ params }) {
