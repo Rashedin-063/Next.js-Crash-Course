@@ -63,7 +63,9 @@ export default function RootLayout({ children }) {
           </ul>{' '}
         </nav>
 
-        <div className={`h-[90vh] bg-blue-950 ${inter.variable}`}>{children}</div>
+        <div className={`min-h-[100vh] bg-blue-950 ${inter.variable} `}>
+          {children}
+        </div>
         <footer className='h-20'></footer>
       </body>
     </html>

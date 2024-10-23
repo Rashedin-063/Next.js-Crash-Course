@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-   <div className="min-h-[90vh] flex justify-center items-center bg-blue-950 px-8 h-[80vh]">
+   <div className=" flex justify-center items-center bg-blue-950 px-8 ">
       <div>
           <h1 className="text-3xl text-yellow-600 font-semibold italic"> Hello World </h1>
       <p className="block italic mt-2 text-green-600">I am rashedin islam, a junior mern stack developer

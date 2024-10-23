@@ -1,5 +1,9 @@
+import Comments from "@/components/Comments";
+import getPostComment from "@/lib/getPostComment";
 import getSinglePost from "@/lib/getSinglePost";
+import { Suspense } from "react";
 
+// generate metadata
 export async function generateMetadata({params}) {
    const { id } = params;
   const post = await getSinglePost(id);
@@ -12,17 +16,28 @@ export async function generateMetadata({params}) {
 
 async function SinglePostPage({ params }) {
   const { id } = params;
-  const post = await getSinglePost(id);
+  const postPromise = getSinglePost(id);
+  const commentsPromise = getPostComment(id)
+  // console.log(comments)
+
+  // const [post, comments] = await Promise.all([postPromise, commentsPromise])
+
+  const post = await postPromise;
+  
 
   return (
-    <div className='flex flex-col items-center justify-center h-[80vh] space-y-4 mx-8'>
-      <div className='border border-dotted px-2 py-4 rounded-lg border-yellow-200 space-y-2'>
+    <div className='pb-8 space-y-4 pt-20'>
+      <div className=' border border-dotted p-4 lg:p-8 rounded-lg border-yellow-200 space-y-2 lg:w-1/2 mx-auto'>
         <h2 className='text-green-500 text-lg border-b hover:border-b-2 pb-2 border-yellow-200 border-opacity-45 hover:transition-all hover:duration-300'>
           {post.title}
         </h2>
 
         <p> {post.body} </p>
       </div>
+
+      <Suspense fallback={<h1 className='mt-10'>Loading Comments....</h1>}>
+        <Comments commentsPromise={commentsPromise} />
+      </Suspense>
     </div>
   );
 }

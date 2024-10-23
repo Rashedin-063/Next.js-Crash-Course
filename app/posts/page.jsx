@@ -9,8 +9,8 @@ async function PostPage() {
   
 
   return (
-    <div className='h-[80vh] flex flex-col justify-center items-center'>
-      <h1 className='text-2xl'>All Posts</h1>
+    <div className='pt-20'>
+      <h1 className='text-2xl text-center border-b w-36 mx-auto rounded-xl'>All Posts</h1>
       <ul className='mt-6 px-6'>
         {posts.map((post, idx) => (
           <li key={post.id}
