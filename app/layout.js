@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
     >
       <body className={`font-sans`}>
         <nav
-          className={`py-4 bg-blue-950 opacity-45 text-yellow-200 font-semibold flex gap-6 justify-center h-16 font-mono`}
+          className={`py-4 bg-blue-950 bg-opacity-45 text-green-600 font-semibold flex gap-6 justify-center h-16 font-mono`}
         >
           <ul className='flex gap-4'>
             <li>
@@ -52,6 +52,12 @@ export default function RootLayout({ children }) {
             <li>
               <Link prefetch={false} href='/blog'>
                 Blog
+              </Link>
+            </li>
+            |
+            <li>
+              <Link prefetch={false} href='/posts'>
+                Posts
               </Link>
             </li>
           </ul>{' '}
